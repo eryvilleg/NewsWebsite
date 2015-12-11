@@ -1,5 +1,5 @@
 $.ajax({
-  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('http://www.npr.org/rss/rss.php?id=1006'),
+  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('http://www.korea.net/koreanet/rss/newsfocus/culture'),
   dataType : 'json',
   success  : function (data) {
     if (data.responseData.feed && data.responseData.feed.entries) {
