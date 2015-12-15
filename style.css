@@ -1,44 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
 body {
     margin: 0 20% 10 20%;
-    background-color: white;	
-     opacity: 0.9;
+    background-color: white;
+    opacity: 0.9;
     z-index: 10000;
+    font-weight: bold;
 }
 
-<<<<<<< .mine
-#clearsky{
-    
-	font-family: Androgyne;
-	background-image: url('Images/cloud2.png'), url('Images/cloud2.png'), url('Images/cloud.png');
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index:1;
-	-webkit-animation: clearsky 10s linear infinite;
-	-moz-animation: clearsky 10s linear infinite;
-	-ms-animation: clearsky 10s linear infinite;
-	animation: clearsky 10s linear infinite;
+#clearsky {
+    font-family: Androgyne;
+    background-image: url('Images/cloud2.png'), url('Images/cloud2.png'), url('Images/cloud.png');
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: clearsky 10s linear infinite;
+    -moz-animation: clearsky 10s linear infinite;
+    -ms-animation: clearsky 10s linear infinite;
+    animation: clearsky 10s linear infinite;
 }
-=======
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> .theirs
 @keyframes clearsky {
     0% {
         background-position: 0px 0px, 0px 0px, 0px 0px;
@@ -212,31 +195,6 @@ body {
     }
 }
 
-<<<<<<< .mine
-
-
-
-
-
-=======
-body {
-    margin: 0 20% 10 20%;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: bold;
-}
->>>>>>> .theirs
-
-<<<<<<< .mine
-
-
-
-
-
-
-
-
-=======
 .showTime {
     float: right;
 }
@@ -245,7 +203,6 @@ body {
     margin-top: 4%;
 }
 
->>>>>>> .theirs
 img {
     padding-top: 0;
     margin-top: 2%;
