@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    loadData();
+
     getArticles('http://www.npr.org/rss/rss.php?id=1001', '#bus');
     getArticles('http://www.npr.org/rss/rss.php?id=1006', '#top');
     getArticles('http://www.npr.org/rss/rss.php?id=1004', '#wor');
@@ -8,6 +10,34 @@ $(document).ready(function () {
 });
 
 var stockNum = 0;
+
+var weatherData;
+var request = new XMLHttpRequest();
+var date = new Date();
+
+function loadData() {
+    request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Salt Lake City, US&units=imperial&APPID=5b58cb430029c691af5164121654fe53');
+    request.onload = loadComplete;
+    request.send();
+}
+
+function loadComplete(evt) {
+    weatherData = JSON.parse(request.responseText);
+    console.log(weatherData);
+    document.getElementById("place").innerHTML = weatherData.name;
+    document.getElementById("currentTemp").innerHTML = weatherData.main.temp + " ℉";
+    document.getElementById("conditions").innerHTML = weatherData.weather[0].main + " (" + weatherData.weather[0].description + ")";
+
+    if (weatherData.weather[0].main.includes("Sun")) {
+        document.getElementById("weatherico").src = 'WeatherIcons/Sunny.png';
+    } else if (weatherData.weather[0].main.includes("Rain")) {
+        document.getElementById("weatherico").src = 'WeatherIcons/Rain.png';
+    } else if (weatherData.weather[0].main.includes("Snow")) {
+        document.getElementById("weatherico").src = 'WeatherIcons/Snow.png';
+    } else if (weatherData.weather[0].main.includes("Cloud")) {
+        document.getElementById("weatherico").src = 'WeatherIcons/Could.png';
+    }
+}
 
 function ticker() {
     var stockNames = [
@@ -23,7 +53,6 @@ function ticker() {
     getStocks(stockNames[stockNum]);
 }
 
-//pass in the urls seperately-
 function getStocks(stockUrl) {
     $.ajax({
         url: "http://www.google.com/finance/info?q=" + stockUrl,
@@ -34,7 +63,13 @@ function getStocks(stockUrl) {
                     "\nChange: " + e.c +
                     "\nCurrent: " + e.l_cur;
 
-                $('#sto').html('<p>' + stockString + '</p>');
+                if (stockString.includes("+")) {
+                    $('#sto').html('<p style="color:green">' + stockString + '</p>');
+                } else if (stockString.includes("-")) {
+                    $('#sto').html('<p style="color:red">' + stockString + '</p>');
+                } else {
+                    $('#sto').html('<p>' + stockString + '</p>');
+                }
             });
         }
     });
