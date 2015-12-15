@@ -3,15 +3,14 @@ body {
     margin: 0 20% 10 20%;
     background-color: white;
     opacity: 0.9;
-    z-index: 10000;
     font-weight: bold;
 }
 
 #clearsky {
     font-family: Androgyne;
     background-image: url('Images/cloud2.png'), url('Images/cloud2.png'), url('Images/cloud.png');
-    height: 100%;
-    left: 0;
+    height: 220%;
+    left: -70;
     position: absolute;
     top: 0;
     width: 100%;
@@ -72,11 +71,11 @@ body {
 
 #rain {
     background-image: url('Images/rain.png'), url('Images/rain2.png'), url('Images/rain.png');
-    height: 100%;
-    left: 0;
+    height: 220%;
+    left: -70;
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 200%;
     z-index: 1;
     -webkit-animation: rain 2s linear infinite;
     -moz-animation: rain 2s linear infinite;
@@ -135,11 +134,11 @@ body {
 #snow {
     font-family: Androgyne;
     background-image: url('Images/s1.png'), url('Images/snow2.png'), url('Images/snow3.png');
-    height: 100%;
-    left: 0;
+    height: 220%;
+    left: -70;
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 200%;
     z-index: 1;
     -webkit-animation: snow 10s linear infinite;
     -moz-animation: snow 10s linear infinite;
