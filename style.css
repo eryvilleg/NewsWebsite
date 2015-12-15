@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
-html {background-color: #333;}
+html {background-color:  #007FFF;}
 
-#snow{
-	
-	font-family: Androgyne;
-	background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+#snow{  
+
+	background-image: url('Images/cloud2.png'), url('Images/cloud2.png'),  url('Images/cloud.png');
 	height: 100%;
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
 	z-index:1;
-	-webkit-animation: snow 10s linear infinite;
-	-moz-animation: snow 10s linear infinite;
-	-ms-animation: snow 10s linear infinite;
-	animation: snow 10s linear infinite;
+	-webkit-animation: snow 25s linear infinite;
+	-moz-animation: snow 20s linear infinite;
+	-ms-animation: snow 25s linear infinite;
+	animation: snow 20s linear infinite;
 }
 @keyframes snow {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
@@ -37,7 +36,6 @@ html {background-color: #333;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }	
 
-
 body {
     margin: 0 15% 0 15%;
     background-color: white;	
@@ -56,6 +54,7 @@ div {
     margin: 0 5% 0 5%;
     font-family: 'News Cycle';
     clear: both;
+    
 }
 
 h1 {}
