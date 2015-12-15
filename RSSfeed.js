@@ -1,12 +1,11 @@
-backgroundColor();
-function backgroundColor(){    
-    var currentTime = new Date().getHours();
-    if(7 <= currentTime && currentTime < 20){
-        document.getElementById('clearsky').style.backgroundColor = "#87CEFA";
-    }else{
-       document.getElementById('clearsky').style.backgroundColor = "#000217";
-    }
-}
+
+
+var s = document.createElement('div');
+s.id='snow';
+var cs = document.createElement('div');
+cs.id = 'clearsky';
+var r = document.createElement('div');
+r.id = 'rain';
 
  var today = new Date();
 
@@ -88,11 +87,15 @@ var weatherData;
 var request = new XMLHttpRequest();
 var date = new Date();
 
+
+
 function loadData() {
     request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Salt Lake City, US&units=imperial&APPID=5b58cb430029c691af5164121654fe53');
     request.onload = loadComplete;
     request.send();
 }
+
+
 
 function loadComplete(evt) {
     weatherData = JSON.parse(request.responseText);
@@ -100,17 +103,41 @@ function loadComplete(evt) {
     document.getElementById("place").innerHTML = weatherData.name;
     document.getElementById("currentTemp").innerHTML = weatherData.main.temp + " ℉";
     document.getElementById("conditions").innerHTML = weatherData.weather[0].main + " (" + weatherData.weather[0].description + ")";
-
+    var currentTime = new Date().getHours();
     if (weatherData.weather[0].main.includes("Sun")) {
         document.getElementById("weatherico").src = 'WeatherIcons/Sunny.png';
+         if(7 <= currentTime && currentTime < 20){
+        document.getElementById('climate').style.backgroundColor = "#87CEFA";
+    }else{
+       document.getElementById('climate').style.backgroundColor = "#000217";
+    }
+        document.getElementById("climate").appendChild(cs);
+    
     } else if (weatherData.weather[0].main.includes("Rain")) {
         document.getElementById("weatherico").src = 'WeatherIcons/Rain.png';
+        if(7 <= currentTime && currentTime < 20){
+        document.getElementById('climate').style.backgroundColor = "#616363";
+    }else{
+       document.getElementById('climate').style.backgroundColor = "#00021C";
+    }         
+        docuement.getElementById("climate").appendChild(r);
+       
     } else if (weatherData.weather[0].main.includes("Snow")) {
         document.getElementById("weatherico").src = 'WeatherIcons/Snow.png';
+        
+       if(7 <= currentTime && currentTime < 20){
+        document.getElementById('climate').style.backgroundColor = "#616363";
+    }else{
+       document.getElementById('climate').style.backgroundColor = "#000217";
+    }
+        document.getElementById("climate").appendChild(s);
+      
     } else if (weatherData.weather[0].main.includes("Cloud")) {
         document.getElementById("weatherico").src = 'WeatherIcons/Could.png';
+        document.getElementById("climate").appendChild(cs);
     }
 }
+
 
 function ticker() {
     var stockNames = [
