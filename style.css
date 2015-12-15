@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
-html {}
-
+body {
+    margin: 0 20% 10 20%;
+    background-color: white;	
+     opacity: 0.9;
+    z-index: 10000;
+}
 
 #clearsky{
     
@@ -111,11 +115,7 @@ html {}
 }	
 
 
-body {
-    margin: 0 20% 10 20%;
-    background-color: white;	
-     opacity: 0.7;
-}
+
 
 img {
     padding-top: 0;
