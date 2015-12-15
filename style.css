@@ -57,5 +57,26 @@ div {
     
 }
 
-h1 {}
+#sto {
+    text-align: center;
+}
 
+a:link {
+    color: '#BF5B04';
+    text-decoration: none;
+}
+
+a:visited {
+    color: '#8C0808';
+    text-decoration: none;
+}
+
+a:hover {
+    color: '#8C0808';
+    text-decoration: none;
+}
+
+a:active {
+    color: '#8C0808';
+    text-decoration: none;
+}
